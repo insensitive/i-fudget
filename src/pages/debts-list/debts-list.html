@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Your Debts</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-group>
+    <ion-item-sliding>
+    <ion-item *ngFor="let debt of debts" (click)="modifyDebt(debt)">
+      <h3>{{debt?.amount}}</h3>
+      <p>
+        <span>{{debt?.title}} </span>
+        <span float-right><i>{{debt?.timestamp | date: 'dMMM h:mm'}}</i></span>
+      </p>
+    </ion-item>
+    </ion-item-sliding>
+    </ion-item-group>
+  </ion-list>
+</ion-content>

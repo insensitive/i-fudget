@@ -1,0 +1,63 @@
+$categories: (
+ ionic: color($colors, primary),
+ angular: #AC282B,
+ communication: #8E8D93,
+ tooling: #FE4C52,
+ services: #FD8B2D,
+ design: #FED035,
+ workshop: #69BB7B,
+ food: #3BC7C4,
+ documentation: #B16BE3,
+ navigation: #6600CC,
+);
+
+@function auxiliary-categories() {
+  @return map-remove($categories);
+}
+
+page-bills {
+  @each $track, $value in auxiliary-categories() {
+   ion-item-sliding[track=#{$track}] ion-label {
+     border-left: 2px solid $value;
+     padding-left: 10px;
+   }
+  }
+  .past-filters{
+  	//background-color: color($colors, lcontrast);
+  	text-align:center;
+  	margin:5px auto;
+  	padding-top:5px;
+  	padding-bottom:5px;
+  	max-width:80%;
+    .select-icon-inner{
+      color:white !important;
+    }
+  }
+  .past-filter-container{
+    color:white;
+  	background-color: color($colors, contrast);
+  	ion-buttons {
+      line-height: 2.8em;
+      text-align: center;
+      background-color:color($colors, bcontrast);
+      button{
+      	background:none;
+      }
+    }
+	}
+	.search-button{
+		button{
+			color:white;
+		}
+	}
+  ion-item-divider{
+    background-color: white !important;
+    border-top: 1px solid color($colors,primary);
+    border-bottom: 1px solid color($colors,primary) !important;
+    color: color($colors,primary) !important;
+  }
+  ion-label .credit-card-badge{
+    background-color: color($colors,lcontrast);
+  }
+
+}

@@ -1,0 +1,67 @@
+V  Create month wise wiew
+
+V Create ACL navigation
+
+V Show total spends in the stats page
+
+---------------------------------
+
+V Reset form
+
+V Sort reverse chronological
+
+----------------------------------
+
+V Delete Functionality
+
+V Click on plus should go to Add bill
+
+V Slowness
+
+----------------------------------
+
+V Remove unnecessary code
+
+V Rename variables and filenames
+
+V Add recurring payments
+
+V Allow credit card checkbox
+
+V Add credit entries in debt
+
+-------------------------------------------
+
+* Make the date dynamic.
+
+* No records found templating
+
+* Allow to attach reciept
+
+* Allow to change frequency
+
+* Allow to add Category
+
+* Add family members (multiuser support)
+
+--------------------------------------------
+
+* Login user best practices.
+
+* Allow investment checkbox
+
+* Allow to mark it as investment
+
+* Manage Debts and dynamically calculate interests.
+
+* Create a reusable global object component.
+
+* Accessiblity
+
+* Use observable properly
+
+* Change Password / Add House name
+
+* Show patterns
+
+* Set Goals for users

@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Repeating Bills</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-group>
+    <ion-item-sliding>
+    <ion-item *ngFor="let bill of repeatingBills" (click)="presentActionSheet(group.id)">
+      <h3>{{bill?.amount}}</h3>
+      <p>
+        <span>{{bill?.title}} </span>
+        <span float-right><i>{{bill?.timestamp | date: 'dMMM h:mm'}}</i></span>
+      </p>
+    </ion-item>
+    </ion-item-sliding>
+    </ion-item-group>
+  </ion-list>
+  <ion-fab bottom right #fab (click)="presentPopover()">
+    <button ion-fab><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>

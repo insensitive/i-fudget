@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Total Spends</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+  	<h2>This Month Expenses</h2>
+  	<span class="current-month-big-text">{{currentMonthExpense}}</span>
+  </ion-card>
+  <ion-card>
+  	<h2>Fixed Expenses</h2>
+  	<span class="current-month-big-text">{{fixedExpenses}}</span>
+  </ion-card>
+  <ion-card>
+  	<h2>Total Expenses</h2>
+  	<span class="current-month-big-text">{{fixedExpenses + currentMonthExpense}}</span>
+  </ion-card>
+</ion-content>

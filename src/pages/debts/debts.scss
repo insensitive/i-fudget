@@ -1,0 +1,19 @@
+page-debts {
+  .current-month-big-text {
+    display:block;
+    text-align:center;
+    font-size:4em;
+    color: color($colors,contrast);
+  }
+  ion-card{
+    //background:color($colors,contrast) !important;
+    text-align: center;
+    border: 2px solid color($colors,contrast);
+    box-shadow: none !important;
+    color: color($colors,contrast);
+    padding: 20px;
+    h2{
+      color:color($colors,contrast) !important;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Add Debt</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <form #addDebtForm="ngForm" novalidate>
+    <ion-list no-lines>
+      <ion-item>
+        <ion-label floating color="primary">Amount</ion-label>
+        <ion-input [(ngModel)]="debt.amount" name="amount" type="number" #amount="ngModel" spellcheck="false" autocapitalize="off"
+          >
+        </ion-input>
+      </ion-item>
+      <p ion-text [hidden]="amount.valid || submitted == false" color="danger" padding-left>
+        Please enter the debt amount
+      </p>
+
+      <ion-item>
+        <ion-label floating color="primary">Title</ion-label>
+        <ion-input [(ngModel)]="debt.title" name="title" type="text" #title="ngModel">
+        </ion-input>
+      </ion-item>
+      <p ion-text [hidden]="title.valid || submitted == false" color="danger" padding-left>
+        Debt title is required
+      </p>
+    </ion-list>
+
+    <ion-row responsive-sm>
+      <ion-col>
+        <button ion-button (click)="addDebt(addDebtForm)" type="submit" block [(disabled)]=submitted>Add Debt</button>
+      </ion-col>
+    </ion-row>
+  </form>
+
+</ion-content>

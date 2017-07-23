@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-segment [(ngModel)]="segment" (ionChange)="getBills()">
+      <ion-segment-button value="all">
+        This Month
+      </ion-segment-button>
+      <ion-segment-button value="favorites">
+        Past
+      </ion-segment-button>
+    </ion-segment>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)" *ngIf="segment === 'all'">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  
+  <ion-row class="past-filter-container" *ngIf="segment === 'favorites'">
+    <ion-col col-4>
+    <ion-select interface="popover" [(ngModel)]="selectedMonth" class="past-filters">
+      <ion-option *ngFor="let month of months">{{month}}</ion-option>
+    </ion-select>
+    </ion-col>
+
+    <ion-col col-4>
+    <ion-select interface="popover" [(ngModel)]="selectedYear" class="past-filters">
+      <ion-option>2017</ion-option>
+    </ion-select>
+    </ion-col>
+    <ion-col col-4 class="search-button">
+      <ion-buttons><button (click)="filterRecords()">Search</button></ion-buttons>
+    </ion-col>
+  </ion-row>
+  
+  <ion-list *ngIf="bills">
+    <ion-item-divider color="light">Main Expenses</ion-item-divider>
+    <ion-item-group>
+    <ion-item-sliding>
+    <ion-item *ngFor="let bill of bills" (click)="actionSheetForSimpleBills(bill.id)">
+      <h3>{{bill?.amount}}</h3>
+      <p>
+        <span>{{bill?.title}} </span>
+        <ion-badge class="credit-card-badge" *ngIf="bill.cc" item-content>cc</ion-badge>
+        <span float-right><i>{{bill?.timestamp | date: 'dMMM h:mm'}}</i></span>
+      </p>
+    </ion-item>
+    </ion-item-sliding>
+    </ion-item-group>
+  </ion-list>
+  <ion-list *ngIf="repeatingBills">
+    <ion-item-divider color="light">Fixed Expenses</ion-item-divider>
+    <ion-item *ngFor="let bill of repeatingBills" (click)="actionSheetForFixedBills(bill.id)">
+      <h3>{{bill?.amount}}</h3>
+      <p>
+        <span>{{bill?.title}} </span>
+        <span float-right><i>{{bill?.timestamp | date: 'dMMM h:mm'}}</i></span>
+      </p>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-fab bottom right #fab (click)="routeToAddBill()">
+    <button ion-fab><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
+
+</ion-content>

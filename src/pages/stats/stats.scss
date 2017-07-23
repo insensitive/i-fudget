@@ -1,0 +1,25 @@
+
+page-stats ion-content {
+  background: rgb(229, 227, 223);
+}
+
+page-stats {
+  h2{
+    text-align:center;
+  }
+  .current-month-big-text {
+    display:block;
+    text-align:center;
+    font-size:4em;
+  }
+  ion-card{
+    //background:color($colors,contrast) !important;
+    border: 2px solid color($colors,contrast);
+    box-shadow: none !important;
+    color: color($colors,contrast);
+    padding: 20px;
+    h2{
+      color:color($colors,contrast) !important;
+    }
+  }
+}
