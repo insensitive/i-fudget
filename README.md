@@ -11,7 +11,7 @@ export const firebaseConfig = {
 };
 ```
 
-Replace values with your firebase configuration
+Replace values with your `Firebase configuration`
 
 Run `npm install`
 
