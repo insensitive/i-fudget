@@ -1,5 +1,5 @@
 # i-fudget
-Create File app.config.ts in src/app/ with content
+Create a file with the name `app.config.ts` in `src/app/` and paste below code :
 ```
 export const firebaseConfig = {
   apiKey: "###################",
@@ -13,6 +13,6 @@ export const firebaseConfig = {
 
 Replace values with your firebase configuration
 
-Run npm install
+Run `npm install`
 
-Run ionic serve
+Run `ionic serve`
