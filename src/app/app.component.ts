@@ -50,12 +50,10 @@ export class ConferenceApp {
     { title: 'Debts', name: 'DebtsPage', component: DebtsPage, icon: 'card', index: 2},
     { title: 'Stats', name: 'TabsPage', component: TabsPage, tabComponent: StatsPage, index: 3, icon: 'stats' },
     { title: 'Account', name: 'AccountPage', component: AccountPage, icon: 'person' },
-    { title: 'Support', name: 'SupportPage', component: SupportPage, icon: 'help' },
     { title: 'Logout', name: 'LoginPage', component: AccountPage, icon: 'log-out', logsOut: true }
   ];
   loggedOutPages: PageInterface[] = [
     { title: 'Login', name: 'LoginPage', component: LoginPage, icon: 'log-in' },
-    { title: 'Support', name: 'SupportPage', component: SupportPage, icon: 'help' },
     { title: 'Signup', name: 'SignupPage', component: SignupPage, icon: 'person-add' }
   ];
   rootPage: any;

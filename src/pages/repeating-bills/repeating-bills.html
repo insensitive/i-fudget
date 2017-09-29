@@ -11,7 +11,7 @@
   <ion-list>
     <ion-item-group>
     <ion-item-sliding>
-    <ion-item *ngFor="let bill of repeatingBills" (click)="presentActionSheet(group.id)">
+    <ion-item *ngFor="let bill of repeatingBills">
       <h3>{{bill?.amount}}</h3>
       <p>
         <span>{{bill?.title}} </span>

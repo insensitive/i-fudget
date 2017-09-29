@@ -20,6 +20,7 @@ export class BillsPage {
   userDetails : any;
   debug:any;
   months:any = moment.months();
+  years:any = []
   selectedMonth:any = moment().format('MMMM');
   selectedYear:any = moment().format('YYYY');
   searchMonth:any = this.selectedMonth + '-' + this.selectedYear;
@@ -35,6 +36,7 @@ export class BillsPage {
   ) {}
 
   ionViewDidLoad() {
+    this.years = this.user.getlastTenYears();
     firebase.auth().onAuthStateChanged((user:any) => {
       if (user) {
         this.userDetails = user;

@@ -4,6 +4,7 @@ import { Events } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 import { AngularFireAuth } from 'angularfire2/auth';
+import * as moment from 'moment';
 import * as firebase from 'firebase/app';
 
 @Injectable()
@@ -94,4 +95,16 @@ export class UserData {
       return value;
     });
   };
+
+  getlastTenYears(): any {
+    let Start = new Date(moment().subtract(10,'years').toString());
+    let End = new Date(moment.now());
+    let years = moment(End).diff(Start, 'years');
+    let yearsBetween = [];
+    for(let year = 0; year < years; year++){
+      yearsBetween.unshift(Start.getFullYear() + year);
+    }
+    yearsBetween.unshift(moment().year());
+    return yearsBetween;
+  }
 }

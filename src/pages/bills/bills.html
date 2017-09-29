@@ -29,7 +29,7 @@
 
     <ion-col col-4>
     <ion-select interface="popover" [(ngModel)]="selectedYear" class="past-filters">
-      <ion-option>2017</ion-option>
+      <ion-option *ngFor="let year of years">{{year}}</ion-option>
     </ion-select>
     </ion-col>
     <ion-col col-4 class="search-button">
@@ -46,7 +46,7 @@
       <p>
         <span>{{bill?.title}} </span>
         <ion-badge class="credit-card-badge" *ngIf="bill.cc" item-content>cc</ion-badge>
-        <span float-right><i>{{bill?.timestamp | date: 'dMMM h:mm'}}</i></span>
+        <span float-right><i>{{bill?.timestamp | date: 'd MMM h:mm'}}</i></span>
       </p>
     </ion-item>
     </ion-item-sliding>
